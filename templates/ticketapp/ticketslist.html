@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="bloghead container mb-5">
+
+    <div class="btn-group" role="group">
+     فیلتر :
+        <a href="{% url 'ticketapp:ticketslist' %}" type="button" class="btn btn-secondary">همه</a>
+        <a href="{% url 'ticketapp:ticketslistopen' %}" type="button" class="btn btn-secondary">تیکت‌های باز</a>
+        <a href="{% url 'ticketapp:ticketslistclose' %}" type="button" class="btn btn-secondary">تیکت‌های بسته</a>
+    </div>
+        <form action="" method="post">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        <table class="table table-hover my-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">عنوان</th>
+                    <th scope="col">کاربر</th>
+                    <th scope="col">تاریخ</th>
+                    <th scope="col">دسته بندی</th>
+                    <th scope="col">وضعیت تیکت</th>
+                    <th scope="col">مشاهده تیکت</th>
+                    <th scope="col">بستن تیکت</th>
+                </tr>
+            </thead>
+            <tbody>
+        {% for form,obj in tickets %}
+        {{ form.errors }}
+            <!--<div class="p-2 my-2 bg-light">-->
+            <!--    <h4>عنوان : {{ obj.title }}</h4>-->
+            <!--    <p>کاربر : {{ obj.user }}</p>-->
+            <!--    <p>وضعیت تیکت : <span class="badge badge-pill {% if not form.close.value %}badge-success">&#10004{% else %}badge-dark ">&#10006{% endif %}</span></p>-->
+            <!--    <p>بستن تیکت : {{ form }}</p>-->
+            <!--    <a href="{{ obj.get_absolute_url }}">مشاهده تیکت</a>-->
+            <!--</div>-->
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ obj.title }}</td>
+                    <td>{{ obj.user }}</td>
+                    <td>{{ obj.created }}</td>
+                    <td>{{ obj.category }}</td>
+                    <td><span class="badge badge-pill {% if not form.close.value %}badge-success">&#10004{% else %}badge-dark ">&#10006{% endif %}</span></td>
+                    <td><a href="{{ obj.get_absolute_url }}">مشاهده تیکت</a></td>
+                    <td>{{ form.id }}{{ form.close }}</td>
+                </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+        <input class="btn btn-outline-info" type="submit" value="ایجاد تغییرات">
+        </form>
+    </div>
+
+{% endblock %}
+

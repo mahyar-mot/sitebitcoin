@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bloghead p-5">
+<div class="container">
+    <h3> به بخش پشتیبانی خوش آمدید جهت ارتباط با ادمین بر روی ایجاد تیکت جدید کلیک نمایید</h3>
+    <br>
+    <a class="btn btn-info" href="{% url 'ticketapp:newticket' %}">ایجاد تیکت جدید</a>
+    <br><br>
+    {% if created_ticket %}<p> تیکت‌های ارسال شده :</p>{% else %}<p>شما هیچ تیکتی ارسال نکرده‌اید</p>{% endif %}
+</div>
+{% for ticket in created_ticket %}
+    <div class="container p-3 mb-4 border rounded{% if ticket.close %} border-dark {% else %} border-success {% endif %}">
+        <h4>{{ ticket.title }}</h4>
+        <p> دسته بندی :    {{ ticket.category }}  </p>
+        <a class="btn {% if ticket.close %} btn-dark {% else %} btn-success {% endif %}"  href="{{ ticket.get_absolute_url }}">{% if ticket.close %} تیکت بسته شده است {% else %} مشاهده پیام‌ها {% endif %} </a>
+        <br>
+        <small class="text-muted text-left mb-0">{{ ticket.created }}</small>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

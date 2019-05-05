@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{%  load static from staticfiles %}
+
+{% block content %}
+
+    <div  class="container bloghead">
+        <h2 class="text-center"> پست‌های بلاگ</h2>
+        <hr class="grad">
+        <p class="text-center">لورم ایپسوم متن ساختگی با تولید</p>
+    </div>
+    <div id="blog" class="container mx-auto my-5">
+    {% if user.is_authenticated %}
+        <div class="p-3 float-right">
+            <a href="{% url 'blogapp:create' %}" class="btn btn-success">ایجاد پست جدید </a>
+        </div>
+    {% else %}
+        <p class="alert alert-warning">برای ایجاد پست جدید ابتدا وارد سایت شوید!</p>
+    {% endif %}
+    {% for blog in blogpost %}
+        <div class="card bg-light shadow w-100 my-5">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img class="card-img" src="{{ blog.thumbnail.url }}">
+                    <div class="card-img-overlay"><span class="badge badge-light">{{ blog.blogtag }}</span></div>
+                </div>
+                <div class="col-md-8 p-1">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ blog.title }}</h4>
+                        <p class="card-text">{{ blog.snippet }}</p>
+                        <br/>
+                        <small class="text-muted">{{ blog.date_created }}زمان ارسال
+                            <br/>{{ blog.author }}نویسنده  </small>
+                        <a href="{% url 'blogapp:blogpost'  slug=blog.slug %}" class="btn btn-primary float-left">اداامه مطلب</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="bloghead container mb-5">
+    <img src="{{ object.thumbnail.url }}" class="img-fluid mb-3">
+    <br/>
+    <span class="breadcrumb-item p-3"><a href="{% url 'blogapp:blog' %}">بازگشت</a></span>
+    <h2 class="p-3 mt-3">{{ object.title }}</h2>
+    <p class="p-3">{{ object.body }}</p>
+    <br>
+    <br>
+    <small class="text-muted text-left"> نویسنده {{ object.author }} </small>
+    <br>
+    <small class="text-muted text-left">زمان ارسال {{ object.date_created }}</small>
+{% for obj in object.comment_set.all %}
+    <div class="media mt-3 bg-light">
+      <img src="/static/images/bitcoin-logo.png" class="align-self-start mr-3">
+      <div class="media-body">
+          <h5 class="mt-0">{{ obj.commenter | default:"Anonymous"}}</h5>
+          <small class="text-muted text-left">زمان ارسال {{ obj.date_commented }}</small>
+          <p>{{ obj.text }}</p>
+      </div>
+    </div>
+{% endfor %}
+</div>
+
+    <div class="container my-5">
+        <form action="{% url 'blogapp:blogpost' slug=object.slug%}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_text">نظر شما:</label>
+                <textarea class="form-control" name="text" id="id_text" rows="3"></textarea>
+            </div>
+            <input type="submit" class="btn btn-info" value="ارسال نظر">
+        </form>
+    </div>
+
+{% endblock %}

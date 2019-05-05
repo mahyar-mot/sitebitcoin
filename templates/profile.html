@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container bloghead p-5 border border-info mb-5" >
+        <div class="p-2">
+                <h3>صفحه پروفایل</h3>
+                <br>
+                <p>نام کاربری : {{ user.username }}</p>
+                <br>
+                <p>نام کامل  : {{ user.get_full_name|default:"تعیین نشده است" }} </p>
+                <br>
+                <p>ایمیل : {{ user.email | default:"تعیین نشده است"}}</p>
+                <br>
+                <p>آخرین ورود : {{ user.last_login }}</p>
+        </div>
+    </div>
+
+
+{% endblock %}

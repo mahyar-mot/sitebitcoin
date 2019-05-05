@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{%  load static from staticfiles %}
+
+{% block content %}
+    <div id="info" class="container">
+        <h2 class="text-center">ویژگی‌های ما</h2>
+        <hr class="grad">
+        <p class="col-md-4 mx-auto text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+        <div class="row">
+            <div class="col-md-3 text-center"><img class="py-5" src="{% static 'images/safebox.png' %}"><h3>امن ترین روش پرداخت</h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه</div>
+            <div class="col-md-3 text-center"><img class="py-5" src="{% static 'images/cryptocurrency.png' %}"><h3>تبدیل ارزهای دیجیتال</h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه</div>
+            <div class="col-md-3 text-center"><img class="py-5" src="{% static 'images/network.png' %}"><h3>بر اساس بلاکچین</h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه</div>
+            <div class="col-md-3 text-center"><img class="py-5" src="{% static 'images/transfer.png' %}"><h3>بهترین پشتیبانی</h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه</div>
+        </div>
+    </div>
+    <div id="exchanger" class="container-fluid">
+        <div class="container">
+            <h2 class="text-center mt-5 mt-sm-1">تبدیل ارز دیجیتال</h2>
+            <hr class="grad mb-0">
+            <br><br>
+            <form>
+                <select name="bit" class="custom-select w-25 mx-sm-5 mb-sm-5" >
+                    <option selected>BT</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <select name="dollar" class="custom-select float-left w-25 mx-sm-5 mb-sm-5">
+                    <option selected>Dollar</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </form>
+            <p>راهنما: لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!--<p class="display-3 text-center py-5">ما از بیش از ۲۰ نوع ارز دیجیتال و ۱۰ زنجیره بلاکچین مختلف پشتیبانی می‌کنیم</p>-->
+        <img class="img-fluid mx-auto d-block"  src="{% static 'images/fddfc4d0971c84ac54ce79eab1a13359.png' %}">
+    </div>
+    <div id="contact" class="container-fluid">
+        <div id="inner-contact">
+            <div><h3>در کسب و کار خود از دنیا جلوتر باشید.</h3>
+                با عضویت در کانال‌های ما در پیام رسان‌های مختلف از جدیدترین اخبار و فعالیت‌ها در حوزه ارزهای دیجیتال با خبر شوید.
+            </div>
+            <div class="mt-5 mr-3">
+                <img class="pr-3" src="{% static 'images/bale.png' %}">
+                <img class="pr-3" src="{% static 'images/eitaa.png' %}">
+                <img class="pr-3" src="{% static 'images/soroush.png' %}">
+                <img class="pr-3" src="{% static 'images/gap.png' %}">
+                <img class="pr-3" src="{% static 'images/Telegram.png' %}">
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h2 class="text-center">آخرین پست‌های بلاگ</h2>
+        <hr class="grad">
+        <p class="text-center">لورم ایپسوم متن ساختگی با تولید</p>
+    </div>
+    <div class="card-deck container mx-auto my-5">
+        <!--<div class="card bg-light shadow">-->
+        <!--    <img class="card-img-top" src="{% static 'images/vector-dark-wallpaper-design.jpg' %}">-->
+        <!--    <div class="card-img-overlay"><span class="badge badge-light">ارز دیجیتال</span></div>-->
+        <!--    <div class="card-body pos">-->
+        <!--        <h4 class="card-title">برترین اپ‌های دریافت بیتکوین رایگان</h4>-->
+        <!--        <p class="card-text text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>-->
+        <!--        <a href="#" class="btn btn-primary float-left">اداامه مطلب</a>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--<div class="card bg-light shadow">-->
+        <!--    <img class="card-img-top" src="{% static 'images/vector-dark-wallpaper-design.jpg' %}">-->
+        <!--    <div class="card-img-overlay"><span class="badge badge-light">ارز دیجیتال</span></div>-->
+        <!--    <div class="card-body pos">-->
+        <!--        <h4 class="card-title">آموزش استفاده از اپلیکیشن سایت ما</h4>-->
+        <!--        <p class="card-text text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>-->
+        <!--        <a href="#" class="btn btn-primary float-left">اداامه مطلب</a>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--<div class="card bg-light shadow">-->
+        <!--    <img class="card-img-top" src="{% static 'images/vector-dark-wallpaper-design.jpg' %}">-->
+        <!--    <div class="card-img-overlay"><span class="badge badge-light">ارز دیجیتال</span></div>-->
+        <!--    <div class="card-body pos">-->
+        <!--        <h4 class="card-title">چرا بیتکوین اینقدر پیشرفت کرد</h4>-->
+        <!--        <p class="card-text text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>-->
+        <!--        <a href="#" class="btn btn-primary float-left">اداامه مطلب</a>-->
+        <!--    </div>-->
+        <!--</div>-->
+        {% for item in blog %}
+            <div class="card bg-light shadow">
+                <img class="card-img-top" src="{{ item.thumbnail.url }}">
+                <div class="card-img-overlay"><span class="badge badge-light">{{ item.blogtag }}</span></div>
+                <div class="card-body pos">
+                    <h4 class="card-title"> {{ item.title }}</h4>
+                    <p class="card-text text-center">{{ item.snippet }}</p>
+                    <a href="blog/blogpost/{{ item.slug }}" class="btn btn-primary float-left">اداامه مطلب</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="cont" class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col"><h3>همین حالا کسب و کار خود را شروع کنید</h3></div>
+                <div class="col text-left">
+                    <a href="{% url 'ticketapp:support' %}" class="btn btn-light shadow ml-sm-3">پشتیبانی</a>
+                    <button type="button" class="btn shadow btn-primary">ثبت سفارش</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   {% endblock %}

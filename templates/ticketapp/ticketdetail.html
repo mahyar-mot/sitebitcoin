@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="bloghead container">
+    <span class="breadcrumb-item p-3"><a href="{% if user.is_staff %}{% url 'ticketapp:ticketslist' %}{% else %}{% url 'ticketapp:support' %}{% endif %}">بازگشت</a></span>
+       <div class="form-group">
+            <label for="detail_title">موضوع:</label>
+            <input type="text" maxlength="255" class="form-control" id="detail_title" value="{{ object.title }}" disabled="disabled"/>
+        </div>
+       <div class="form-group">
+            <label for="detail_category">دسته بندی:</label>
+            <input type="text" class="form-control" id="detail_category" value="{{ object.category }}" disabled="disabled"/>
+        </div>
+        <div class="form-group">
+            <label for="detail_text">شرح مشکل:</label>
+            <textarea class="form-control" name="text" id="detail_text"  disabled="disabled">{{ object.text }}</textarea>
+        </div>
+        <small class="text-muted text-left">زمان ارسال {{ object.created }}</small>
+</div>
+
+    <div class="container mt-3">
+        {% for message in object.messages_set.all %}
+        <div class="alert {% if message.author.is_staff %} alert-success text-left {% else %} alert-info text-right{% endif %}" role="alert">
+              <h5 class="alert-heading mb-1">{{ message.author }}</h5>
+              <p class="mb-2">{{ message.body }}</p>
+            <hr class="my-0"/>
+              <small class="text-muted text-left mb-0">{{ message.modified }}</small>
+        </div>
+        {% endfor %}
+    </div>
+    <hr class="grad my-5"/>
+<div class="container mb-5">
+    <form method="post">
+        {% if object.close %}
+            <p>این تیکت بسته شده است و شما قادر به ارسال پیام دیگری نیستید</p>
+            {% else %}
+        {% csrf_token %}
+            {{ form.errors }}
+        <div class="form-group">
+            {{ form.body.label_tag }}
+            {{ form.body.errors }}
+            {{ form.body }}
+        </div>
+            <input type="submit" class="btn btn-outline-success" value="ارسال">
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

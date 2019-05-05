@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'Tanha';
+    src: url(/static/fonts/Tanha.woff);
+    src: url(/static/fonts/Tanha.eot?#iefix) format("embedded-opentype"),
+    url(/static/fonts/Tanha.woff) format("woff"), url(/static/fonts/Tanha.ttf) format("truetype"), url(/static/fonts/Tanha.svg#iran_sans) format("svg");
+    font-weight: normal;
+    font-style:normal;
+}
+body{
+    font-family:Tanha;
+}
+#h1{
+    height: 630px;
+    position: relative;
+}
+#header{
+    height: 630px;
+    background-color: #4d06bd;
+    background-image: linear-gradient(to bottom left ,#2aa5e0, #2d4d9a,#4b107a,#4b107a);
+    clip-path: polygon(50% 0,100% 0,100% 85% ,50% 90%,0% 95% , 0% 0 );
+    -webkit-clip-path:polygon(50% 0,100% 0,100% 85% ,50% 90%,0% 95% , 0% 0 );
+    /*position: relative;*/
+}
+#menu img{
+    width: 40px;
+}
+#inner-header{
+    background: url("../images/header.png") left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+}
+#price{
+    position: absolute;
+    margin: 0 auto;
+    bottom:0;
+    font-size: 1.5em;
+    /*right: 5vw;*/
+}
+.inn{
+    /*width: 80%;*/
+    height: 100px;
+    margin: 0 auto;
+    background-color: rgba(225, 225, 225, 0.51);
+}
+.grad{
+    width: 10%;
+    height: .2em;
+    background:linear-gradient(to left , #2bbdff, #6506ff) ;
+}
+#info{
+    margin-top: 4%;
+}
+#exchanger{
+    margin-top: 3%;
+    padding: 5% 0;
+    background-color: #dddddd;
+    clip-path: polygon(100% 0,100% 100% ,50% 95%,0% 90%,0 15% );
+    -webkit-clip-path:polygon(100% 0,100% 100% ,50% 95%,0% 90%,0 15% );
+}
+#contact{
+    /*height: 700px;*/
+    background-image: linear-gradient(to left, #2aa5e0,#29236d,#4b107a);
+    clip-path: polygon(0 0%,100% 10%,100%90%,0% 100%);
+    -webkit-clip-path: polygon(0 0%,100% 10%,100%90%,0% 100%);
+
+}
+#inner-contact{
+    height: 600px;
+    padding: 10% 5%;
+    color: white;
+    font-size: 1.2em;
+    background: url("../images/bit2.png") left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.pos{
+    position: relative;
+}
+#cont{
+    background-color: #dddddd;
+}
+#footer{
+    background-color: #1976d2;
+    /*height: 400px;*/
+}
+#footer ul{
+    list-style-type: none;
+}
+#footer li{
+    color: white;
+    padding: 5%;
+    font-size: 1.3em;
+}
+#copyright{
+    background-color: #0d47a1;
+}
+.bloghead{
+    margin-top: 50px;
+}
+#blog>div{
+    direction: ltr;
+}
+@media all and (max-width: 1200px) {
+    .inn {
+        width: 100%;
+        height: auto;
+        margin-bottom:1% ;
+
+    }
+    #inner-contact {
+        height: auto;
+        padding: 15% 5% 30% 5%;
+    }
+
+}
+@media all and (max-width:575px)  {
+    #menu-toggler{
+        position: absolute;
+        top: 80%;
+        right: 5%;
+        width: 80vw;
+        padding: 2%;
+        z-index: 10000;
+        background-color: #2d4d9a;
+    }
+    #price{
+        /*font-size: .9em;*/
+        bottom: -20%;
+    }
+    #exchanger{
+        padding: 10% 0;
+    }
+    #info{
+        margin-top: 140px;
+    }
+    .bloghead{
+    margin-top: 150px;
+    }
+}
+@media all and (max-width: 425px) {
+    #price{
+        position: static;
+    }
+    #info{
+        margin-top: 100%;
+    }
+    .bloghead{
+    margin-top: 450px;
+    }
+}
+@media all and (max-width:370px){
+    #header{
+        height: 655px;
+    }
+    #info{
+        margin-top:125%
+    }
+    .bloghead{
+    margin-top: 600px;
+    }
+}
